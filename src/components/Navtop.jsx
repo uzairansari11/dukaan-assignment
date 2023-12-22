@@ -1,11 +1,11 @@
 import React from "react";
 import Search from "./Search";
 
-const Navtop = () => {
+const Navtop = ({ title }) => {
   return (
     <div className="grid grid-rows-1 grid-cols-3 px-[32px] py-[12px] gap-[16px] border-2 bg-custom-white-800 justify-between ">
       <div className="flex items-center gap-x-[16px] ">
-        <p className="text-[20px]">Payouts</p>
+        <p className="text-[20px] capitalize">{title || " Home"}</p>
         <div className="flex items-center gap-x-[6px] text-[12px] leading-[16px] text-[#4d4d4d] font-normal">
           <img src="/svg/questionmark.svg" alt="question-mark" />
           <p>How it works</p>

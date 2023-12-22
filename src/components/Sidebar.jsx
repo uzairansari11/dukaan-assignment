@@ -21,7 +21,7 @@ const Sidebar = () => {
               </div>
 
               <div className=" flex gap-col-[12px] justify-between flex-col w-[108px]">
-                <p className="Inter text-white text-[15px] font-normal  leading-[22px] ">
+                <p className="font-[Inter] text-white text-[15px] font-normal  leading-[22px] ">
                   Nishyan
                 </p>
                 <p className=" text-custom-gray-300 text-[13px] font-[400px] underline leading-[14px]">
@@ -30,7 +30,7 @@ const Sidebar = () => {
               </div>
 
               <div className=" h-full items-center flex">
-                <img src="/svg/downarrow.svg" />
+                <img src="/svg/downarrow.svg" alt="downarrow" />
               </div>
             </div>
           </div>
@@ -43,6 +43,7 @@ const Sidebar = () => {
                     key={ele.id}
                     svg={ele.svg}
                     title={ele.title}
+                    path={ele.path}
                   />
                 </NavLink>
               );

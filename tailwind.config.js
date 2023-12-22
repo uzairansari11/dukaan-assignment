@@ -7,6 +7,7 @@ module.exports = {
         "custom-blue-800": "#1e2640",
         "custom-blue-600": "#0e4f82",
         "custom-blue-400": "#146eb4",
+        "custom-blue-500": "#216eb4",
         "custom-gray-800": "#4d4d4d",
         "custom-gray-700": "#3f3f46",
         "custom-gray-600": "#71717a",

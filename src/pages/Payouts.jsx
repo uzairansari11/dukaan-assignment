@@ -1,9 +1,18 @@
-import React from "react";
-import Nextpayout from "../components/Nextpayout";
-import PendingAmount from "../components/PendingAmount";
-import AmountProcess from "../components/AmountProcess";
-
+import React, { useState } from "react";
+import AmountCard from "../components/AmountCard";
+import Table from "../components/Table";
+import { payments, refunds } from "../utils/data";
 const Payouts = () => {
+  const [selectedTab, setSelectedTab] = useState("payouts");
+  const activeTableStyle = (tab) => {
+    return {
+      color: selectedTab === tab ? "white" : "gray",
+      backgroundColor: selectedTab === tab ? "#146eb4" : "#ccc",
+    };
+  };
+  const handleTabClick = (tab) => {
+    setSelectedTab(tab);
+  };
   return (
     <div className="m-[32px] ">
       <div className="flex justify-between items-center">
@@ -17,12 +26,75 @@ const Payouts = () => {
           <img src="/svg/iconarrow.svg" alt="dropdown" />
         </div>
       </div>
-      <div className="mt-[24px] flex justify-between border-2 border-yellow-300">
-        <Nextpayout />
-        <PendingAmount />
-        <AmountProcess />
+      <div className="mt-[24px] flex justify-between gap-x-[20px]">
+        <AmountCard
+          title={"Next Payout"}
+          orderNumber={23}
+          bg={"#216eb4"}
+          color="white"
+          nextPayout={"04:00PM"}
+        />
+
+        <AmountCard title={"Amount Pending"} orderNumber={13} />
+        <AmountCard title={"Amount Processed"} />
       </div>
-      <div className="border-2 border-red-300"></div>
+      <div className=" mt-[32px] ">
+        <div>
+          <p className="text-[20px] text-[Galano Grotesque] leading-[28px] font-medium text-[#1a181e]">
+            Transactions | This Month
+          </p>
+          <div className="mt-[20px] flex gap-[16px]">
+            <button
+              className={`py-[6px] px-[16px] bg-custom-gray-200  rounded-full text-sm text-custom-gray-600 ${
+                selectedTab === "payouts" && "active-tab"
+              }`}
+              onClick={() => handleTabClick("payouts")}
+              style={activeTableStyle("payouts")}
+            >
+              Payouts (22)
+            </button>
+            <button
+              className={`py-[6px] px-[16px] bg-custom-gray-200  rounded-full text-sm text-custom-gray-600 ${
+                selectedTab === "payouts" && "active-tab"
+              }`}
+              style={activeTableStyle("refunds")}
+              onClick={() => handleTabClick("refunds")}
+            >
+              Refunds (2)
+            </button>
+          </div>
+
+          <div className=" mt-[24px] p-[12px] rounded-[8px]  bg-custom-white-800">
+            <div className="flex items-center justify-between  ">
+              <div className="pt-[6px] pr-[8px] pb-[6px] pl-[12px] border border-custom-gray-300 rounded flex gap-[6px]  w-60 text-custom-gray-600 items-center">
+                <img src="/svg/search.svg" alt="search-icon" />
+                <input
+                  className=" text-base font-Inter outline-none border-none w-full bg-inherit"
+                  type="text"
+                  placeholder="Order ID or transaction ID"
+                />
+              </div>
+              <div className="flex gap-[20px] ">
+                <div className="flex items-center gap-[6px] py-[6px] px-[10px] border border-custom-gray-300 rounded bg-white text-custom-gray-700">
+                  <p>Sort</p>
+
+                  <img src="/svg/sort.svg" alt="sort svg" />
+                </div>
+                <div className="flex items-center gap-[6px] py-[6px] px-[10px] border border-custom-gray-300 rounded bg-white text-custom-gray-700">
+                  <img src="/svg/download.svg" alt="download svg" />
+                </div>
+              </div>
+            </div>
+
+            <div className=" mt-[10px] h-[200px] overflow-y-scroll">
+              <Table
+                payout={selectedTab === "payouts" ? true : false}
+                data={selectedTab === "payouts" ? payments : refunds}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

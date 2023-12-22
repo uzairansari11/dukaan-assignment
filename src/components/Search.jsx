@@ -7,7 +7,7 @@ const Search = () => {
       <input
         type="search"
         placeholder="Search features, tutorials, etc."
-        className="w-full text-[15px] leading-[22px] non-italic bg-[#f2f2f2] text-[#808080] "
+        className="w-full text-[15px] leading-[22px] non-italic bg-[#f2f2f2] text-[#808080] outline-none border-none "
       />
     </div>
   );
