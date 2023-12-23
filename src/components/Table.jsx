@@ -30,7 +30,7 @@ const Table = ({ payout, data }) => {
                 !payout ? "text-right" : "text-left"
               } `}
             >
-              {payout ? "Transaction fees" : "Refund amount"}
+              {payout ? "Transaction fees" : "Order amount"}
             </th>
             {payout ? (
               <th className="py-[10px] px-[12px] text-right font-medium text-custom-gray-800">
