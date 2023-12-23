@@ -8,10 +8,10 @@ const Dashboard = () => {
 
   return (
     <div className="flex flex-1">
-      <div className="w-[224px]  bg-custom-blue-800">
+      <div className="w-[224px]  bg-custom-blue-800  ">
         <Sidebar />
       </div>
-      <div className="w-full bg-custom-white-100 max-h-svh overflow-hidden">
+      <div className="w-full bg-custom-white-100 max-h-svh overflow-y-scroll">
         <Navtop title={pathname.split("/")[1]} />
         <Outlet />
       </div>

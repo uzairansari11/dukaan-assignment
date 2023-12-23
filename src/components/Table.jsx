@@ -2,7 +2,7 @@ import React from "react";
 
 const Table = ({ payout, data }) => {
   return (
-    <div className=" w-full overflow-y-scroll ">
+    <div className=" w-full">
       <table className="w-full text-[14px] border-collapse">
         <thead className="bg-[#f2f2f2] text-custom-gray-600 font-normal text-left rounded-[4px] ">
           <tr>

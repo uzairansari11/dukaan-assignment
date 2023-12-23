@@ -14,7 +14,7 @@ const Payouts = () => {
     setSelectedTab(tab);
   };
   return (
-    <div className="m-[32px] ">
+    <div className="m-[32px] max-h-svh overflow-scroll-y">
       <div className="flex justify-between items-center">
         <p className="leading-[28px] font-medium text-[20px] text-[#1a181e] ">
           Overview
@@ -86,7 +86,7 @@ const Payouts = () => {
               </div>
             </div>
 
-            <div className=" mt-[10px] h-[200px] overflow-y-scroll">
+            <div className=" mt-[10px]">
               <Table
                 payout={selectedTab === "payouts" ? true : false}
                 data={selectedTab === "payouts" ? payments : refunds}
