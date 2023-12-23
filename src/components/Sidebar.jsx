@@ -35,7 +35,7 @@ const Sidebar = () => {
             </div>
           </div>
 
-          <div className="m-auto">
+          <div >
             {sideBarOptionDetails.map((ele) => {
               return (
                 <NavLink key={ele.id} to={ele.path}>
