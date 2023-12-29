@@ -4,9 +4,9 @@ const Table = ({ payout, data }) => {
   return (
     <div className=" w-full">
       <table className="w-full text-[14px]  text-[Galano Grotesque]  leading-[20px] font-normal text-['#1a181e]">
-        <thead className="bg-[#f2f2f2] ext-[14px] text-[Galano Grotesque]  leading-[20px] font-normal text-['#1a181e] text-left rounded-[4px] ">
+        <thead className="bg-[#f2f2f2] ext-[14px] text-[Galano Grotesque]  leading-[20px] font-normal text-['#1a181e] text-left  ">
           <tr>
-            <th className="py-[10px] px-[12px] font-medium text-[#4d4d4d] rounded-[4px]">
+            <th className="py-[10px] px-[12px] font-medium text-[#4d4d4d] rounded-l-[4px]">
               {payout ? (
                 <div className="w-full py-[4px] px-[20px] ">
                   <img src="/svg/triangle.svg" alt="triangle" />
@@ -15,25 +15,25 @@ const Table = ({ payout, data }) => {
                 "Order ID"
               )}
             </th>
-            <th className="py-[10px] px-[12px] font-medium text-[#4d4d4d] rounded-[4px]">
+            <th className="py-[10px] px-[12px] font-medium text-[#4d4d4d] ">
               {payout ? "" : "Status"}
             </th>
-            <th className="py-[10px] px-[12px] font-medium marker: text-[#4d4d4d] rounded-[4px]">
+            <th className="py-[10px] px-[12px] font-medium marker: text-[#4d4d4d] ">
               Transaction ID
             </th>
 
-            <th className="py-[10px] px-[12px] font-medium  text-[#4d4d4d] rounded-[4px]">
+            <th className="py-[10px] px-[12px] font-medium  text-[#4d4d4d] ">
               {!payout ? "Refund date" : "Order amount"}
             </th>
             <th
-              className={`py-[10px] px-[12px] font-medium text-[#4d4d4d] rounded-[4px] ${
+              className={`py-[10px] px-[12px] font-medium text-[#4d4d4d]  ${
                 !payout ? "text-right" : "text-left"
               } `}
             >
               {payout ? "Transaction fees" : "Order amount"}
             </th>
             {payout ? (
-              <th className="py-[10px] px-[12px] text-right font-medium text-[#4d4d4d] rounded-[4px]">
+              <th className="py-[10px] px-[12px] text-right font-medium text-[#4d4d4d] rounded-r-[4px]">
                 Total
               </th>
             ) : null}
@@ -45,8 +45,10 @@ const Table = ({ payout, data }) => {
             <>
               <tr
                 key={item.orderid}
-                className={`border-b-2 border-custom-gray-100 ${
-                  index === data.length - 1 ? "border-b-0" : ""
+                className={` ${
+                  index === data.length - 1
+                    ? "border-b-0"
+                    : "border-b-2 border-custom-gray-100"
                 }`}
               >
                 <td className="py-[14px] px-[12px] text-custom-blue-400 font-medium">
