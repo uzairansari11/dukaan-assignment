@@ -11,7 +11,7 @@ const Payouts = () => {
     };
   };
   const handleTabClick = (tab) => {
-    setSelectedTab(tab);
+    // setSelectedTab(tab);
   };
   return (
     <div className="m-[32px] max-h-svh overflow-scroll-y">
@@ -26,7 +26,7 @@ const Payouts = () => {
           <img src="/svg/iconarrow.svg" alt="dropdown" />
         </div>
       </div>
-      <div className="mt-[24px] flex justify-between gap-x-[20px]">
+      <div className="mt-[24px] flex justify-between gap-x-[20px] w-full">
         <AmountCard
           title={"Next Payout"}
           orderNumber={23}
@@ -35,7 +35,11 @@ const Payouts = () => {
           nextPayout={"04:00PM"}
         />
 
-        <AmountCard title={"Amount Pending"} orderNumber={13} />
+        <AmountCard
+          title={"Amount Pending"}
+          orderNumber={13}
+          // color={"red"}
+        />
         <AmountCard title={"Amount Processed"} />
       </div>
       <div className=" mt-[32px] ">
@@ -54,7 +58,7 @@ const Payouts = () => {
               Payouts (22)
             </button>
             <button
-              className={`py-[6px] px-[16px] bg-custom-gray-200  rounded-full text-sm text-custom-gray-600 ${
+              className={`py-[6px] px-[16px] bg-custom-gray-200  rounded-full text-sm text-[#808080] ${
                 selectedTab === "payouts" && "active-tab"
               }`}
               style={activeTableStyle("refunds")}
@@ -66,10 +70,12 @@ const Payouts = () => {
 
           <div className=" mt-[24px] p-[12px] rounded-[8px]  bg-custom-white-800">
             <div className="flex items-center justify-between  ">
-              <div className="pt-[6px] pr-[8px] pb-[6px] pl-[12px] border border-custom-gray-300 rounded flex gap-[6px]  w-60 text-custom-gray-600 items-center">
+              <div className="px-[16px] py-[10px] border border-custom-gray-300 rounded flex gap-[8px]  w-60  text-custom-gray-600 items-center ">
                 <img src="/svg/search.svg" alt="search-icon" />
                 <input
-                  className=" text-base font-Inter outline-none border-none w-full bg-inherit"
+                  className="font-[Galano Grotesque]  w-full bg-inherit placeholder-[#999]
+                  text-[14px] leading-[20px]
+                  "
                   type="text"
                   placeholder="Order ID or transaction ID"
                 />
