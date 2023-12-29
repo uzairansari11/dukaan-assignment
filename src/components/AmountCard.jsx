@@ -45,8 +45,12 @@ const AmountCard = ({
               <div className="justify-start items-center flex">
                 <div className="justify-start items-start  flex">
                   <p
-                    className={`text-${orderColor ? orderColor : color ? color :"[#146EB4]"} text-base font-medium font-['Galano Grotesque'] underline leading-normal`}
-                    
+                    className={`*:text-base font-medium font-['Galano Grotesque'] underline leading-normal`}
+                    style={
+                      {
+                        color:`${orderColor ? orderColor : color ? color :"#146eb4"}` 
+                      }
+                    }
                   >
                     {orderNumber} orders
                   </p>

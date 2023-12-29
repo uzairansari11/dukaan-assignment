@@ -38,7 +38,7 @@ const Payouts = () => {
         <AmountCard
           title={"Amount Pending"}
           orderNumber={13}
-          // color={"red"}
+          orderColor={"#146eb4"}
         />
         <AmountCard title={"Amount Processed"} />
       </div>
